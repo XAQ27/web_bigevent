@@ -54,7 +54,7 @@ $(function () {
   $('#form_login').submit(function (e) {
     e.preventDefault()
     $.ajax({
-      url: '/api/login',
+      url: '/api/login ',
       method: 'POST',
       // 快速获取表单中的数据
       data: $(this).serialize(),
@@ -65,6 +65,7 @@ $(function () {
         }
         layer.msg('登陆成功!')
         console.log(res.token);
+        localStorage.setItem('token', res.token)
         // 跳转到后台主页
         location.href = '/index.html'
 
